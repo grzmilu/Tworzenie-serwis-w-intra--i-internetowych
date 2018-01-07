@@ -12,8 +12,9 @@ public class SpringSecurityConfig extends WebSecurityConfigurerAdapter {
     @Override
     protected void configure(HttpSecurity http) throws Exception {
 
-        http.authorizeRequests()
-					.antMatchers("/", "/home", "/about").permitAll()
+        http.csrf().disable()
+        			.authorizeRequests()
+					.antMatchers("/").permitAll()
 					.antMatchers("/user/**").hasAnyRole("USER")
 					.anyRequest().authenticated()
                 .and()
@@ -22,7 +23,9 @@ public class SpringSecurityConfig extends WebSecurityConfigurerAdapter {
 					.permitAll()
 					.and()
                 .logout()
-					.permitAll();
+					.permitAll()
+					.logoutSuccessUrl("/login");
+        	
     }
 
 	@Autowired
