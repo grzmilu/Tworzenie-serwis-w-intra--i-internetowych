@@ -1,5 +1,8 @@
-<html xmlns:th="http://www.thymeleaf.org">
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:th="http://www.thymeleaf.org"
+	xmlns:sec="http://www.thymeleaf.org/extras/spring-security">
 <head>
+<meta charset="UTF-8" />
 <div th:fragment="header-css">
 	<link rel="stylesheet" type="text/css"
 		href="webjars/bootstrap/3.3.7/css/bootstrap.min.css" />
@@ -14,7 +17,11 @@
 				<div id="navbar" class="collapse navbar-collapse">
 					<ul class="nav navbar-nav">
 						<li class="active"><a th:href="@{/}">Home</a></li>
-						<li><a th:href="@{/login}">Login</a></li>
+					</ul>
+					<ul class="nav navbar-nav navbar-right">
+						<li sec:authorize="isAuthenticated()"><a th:href="@{/logout}"><span
+								sec:authentication="name"></span> | Wyloguj </a></li>
+						<li sec:authorize="isAnonymous()"><a th:href="@{/login}">Zaloguj</a></li>
 					</ul>
 				</div>
 			</div>

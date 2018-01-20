@@ -9,24 +9,15 @@ import org.springframework.security.config.annotation.web.configuration.WebSecur
 @Configuration
 public class SpringSecurityConfig extends WebSecurityConfigurerAdapter {
 
-    @Override
-    protected void configure(HttpSecurity http) throws Exception {
+	@Override
+	protected void configure(HttpSecurity http) throws Exception {
 
-        http.csrf().disable()
-        			.authorizeRequests()
-					.antMatchers("/").permitAll()
-					.antMatchers("/user/**").hasAnyRole("USER")
-					.anyRequest().authenticated()
-                .and()
-                .formLogin()
-					.loginPage("/login")
-					.permitAll()
-					.and()
-                .logout()
-					.permitAll()
-					.logoutSuccessUrl("/login");
-        	
-    }
+		http.csrf().disable().authorizeRequests().antMatchers("/").permitAll().antMatchers("/user/**")
+				.hasAnyRole("USER").anyRequest().authenticated().and().formLogin().loginPage("/login").permitAll().and()
+
+				.logout().permitAll().logoutSuccessUrl("/login");
+
+	}
 
 	@Autowired
 	public void configureGlobal(AuthenticationManagerBuilder auth) throws Exception {

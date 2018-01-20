@@ -1,11 +1,16 @@
-h1{
-	color:#0000FF;
-}
-
-h2{
-	color:#FF0000;
-}
-
 footer{
     margin-top:60px;
+}
+
+#chartContainer {
+    min-width: 310px; 
+    margin: 0 auto;
+}
+
+
+code { 
+}
+
+pre {
+    white-space: pre-wrap;
 }
