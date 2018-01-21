@@ -1,16 +1,16 @@
-footer{
-    margin-top:60px;
+footer {
+	margin-top: 60px;
 }
 
 #chartContainer {
-    min-width: 310px; 
-    margin: 0 auto;
+	min-width: 310px;
+	margin: 0 auto;
 }
 
-
-code { 
+code {
+	
 }
 
 pre {
-    white-space: pre-wrap;
+	white-space: pre-wrap;
 }

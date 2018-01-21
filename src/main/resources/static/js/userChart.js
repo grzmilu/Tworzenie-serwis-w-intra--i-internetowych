@@ -31,6 +31,7 @@ function handleFiles(selectedFiles) {
 			var array;
 			try {
 				array = JSON.parse(evt.target.result);
+				jQuery('#alertArea').html('');
 			} catch (e) {
 				$('#alertArea')
 						.html(
