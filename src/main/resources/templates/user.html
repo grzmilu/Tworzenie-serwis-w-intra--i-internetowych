@@ -1,27 +1,32 @@
 <!DOCTYPE HTML>
 <html xmlns:th="http://www.thymeleaf.org">
 <head>
-    <div th:replace="fragments/header :: header-css"/>
+<meta charset="UTF-8" />
+<title>TSI8 website</title>
+
+<div th:replace="fragments/header :: header-css" />
+
 </head>
 <body>
 
-<div th:replace="fragments/header :: header"/>
+	<div th:replace="fragments/header :: header" />
 
-<div class="container">
+	<div class="container">
+		<form enctype="multipart/form-data">
+			<input type="file" name="file" onchange="handleFiles(this.files)"/><br />
+		</form>
 
-    <div class="starter-template">
-        <h1>User page</h1>
+		<hr />
+		<div id="chartContainer"></div>
+		<!-- /.container -->
+	</div>
 
-        <h1 th:inline="text">Hello [[${#httpServletRequest.remoteUser}]]!</h1>
-        <form th:action="@{/logout}" method="post">
-            <input type="submit" value="Sign Out"/>
-        </form>
-
-    </div>
-
-</div>
-<!-- /.container -->
-<div th:replace="fragments/footer :: footer"/>
+	<div th:replace="fragments/footer :: footer" />
+	<script src="js/jquery-3.1.1.min.js"></script>
+	<script src="js/highcharts.js"></script>
+	<script src="js/highcharts-3d.js"></script>
+	<script src="js/exporting.js"></script>
+	<script src="js/userChart.js"></script>
 
 </body>
 </html>
