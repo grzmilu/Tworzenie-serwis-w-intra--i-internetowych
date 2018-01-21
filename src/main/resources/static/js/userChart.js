@@ -32,7 +32,9 @@ function handleFiles(selectedFiles) {
 			try {
 				array = JSON.parse(evt.target.result);
 			} catch (e) {
-				alert(e); // You get an error.
+				$('#alertArea')
+						.html(
+								$("<div class='alert alert-danger alert-dismissible fade in' ><button type='button' class='close' data-dismiss='alert' aria-label='Close'><span aria-hidden='true'>&times;</span></button><p>Wprowadzono błędne dane do generowania wykresu</p></div>"));
 			}
 			xLowest = null;
 			xHighest = null;

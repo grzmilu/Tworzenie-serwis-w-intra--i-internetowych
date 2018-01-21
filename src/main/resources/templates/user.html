@@ -12,6 +12,7 @@
 	<div th:replace="fragments/header :: header" />
 
 	<div class="container">
+		<div id="alertArea"></div>
 		<form enctype="multipart/form-data">
 			<input type="file" name="file" onchange="handleFiles(this.files)"/><br />
 		</form>
