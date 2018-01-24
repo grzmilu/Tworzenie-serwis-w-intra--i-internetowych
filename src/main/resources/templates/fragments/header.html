@@ -19,6 +19,7 @@
 						<li class="active"><a th:href="@{/}">Home</a></li>
 						<li sec:authorize="isAuthenticated()"><a th:href="@{/user}">Stwórz
 								Wykres</a></li>
+						<li sec:authorize="isAuthenticated()"><a th:href="@{/files}">Zapisane pliki</a></li>
 					</ul>
 					<ul class="nav navbar-nav navbar-right">
 						<li sec:authorize="isAuthenticated()"><a th:href="@{/logout}"><span
