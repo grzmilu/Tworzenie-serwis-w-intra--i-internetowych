@@ -21,9 +21,13 @@ Highcharts.setOptions({
 
 function handleFiles(selectedFiles) {
 	jQuery('#chartContainer').html('');
-
+	
 	var file = selectedFiles[0];
-
+	
+	jQuery('#fileDescription').text(file.name);
+	jQuery('#fileDescription').show();
+	jQuery('#btnSave').show();	
+	
 	if (file) {
 		var reader = new FileReader();
 		reader.readAsText(file, "UTF-8");
