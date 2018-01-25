@@ -1,0 +1,28 @@
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:th="http://www.thymeleaf.org"
+	xmlns:sec="http://www.thymeleaf.org/extras/spring-security">
+<head>
+<meta charset="UTF-8" />
+</head>
+<body>
+	<div th:fragment="footer">
+
+		<div class="container">
+
+			<footer>
+				© 2018 tsi8.website.com <span sec:authorize="isAuthenticated()">
+					| Logged user: <span sec:authentication="name"></span> | Roles: <span
+					sec:authentication="principal.authorities"></span> | <a
+					th:href="@{/logout}">Sign Out</a>
+				</span>
+
+				<script src="js/jquery-3.1.1.min.js"></script>
+				<script type="text/javascript"
+					src="webjars/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+				<script type="text/javascript" src="js/main.js"></script>
+			</footer>
+		</div>
+
+	</div>
+</body>
+</html>

@@ -1,0 +1,28 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8" />
+<title>TSI8 website</title>
+
+<div th:replace="fragments/header :: header-css" />
+
+</head>
+<body>
+
+	<div th:replace="fragments/header :: header" />
+
+	<div>
+		<ul>
+			<li th:each="file : ${files}">
+				<a th:href="${file}" th:text="${file.filename}" />
+			</li>
+		</ul>
+	</div>
+
+	<div th:replace="fragments/footer :: footer" />
+	<script src="js/highcharts.js"></script>
+	<script src="js/highcharts-3d.js"></script>
+	<script src="js/exporting.js"></script>
+	<script src="js/chartExample.js"></script>
+</body>
+</html>

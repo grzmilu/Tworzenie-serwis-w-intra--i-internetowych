@@ -19,21 +19,6 @@ Highcharts.setOptions({
 	})
 });
 
-function checkbox(){
-	alert("Zmieniono stan checkboxa");	
-}
-
-function radio1(){
-	alert("Zmieniono stan radiobuttona nr 1");	
-}
-function radio2(){
-	alert("Zmieniono stan radiobuttona nr 2");
-}
-function radio3(){
-	alert("Zmieniono stan radiobuttona nr 3");	
-}
-
-
 function handleFiles(selectedFiles) {
 	jQuery('#chartContainer').html('');
 	

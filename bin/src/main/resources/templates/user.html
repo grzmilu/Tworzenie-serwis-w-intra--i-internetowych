@@ -14,17 +14,12 @@
 	<div class="container">
 		<div id="alertArea"></div>
 		<form method="POST" enctype="multipart/form-data" action="/save">	
-		<input type="text" name="fname"/> text<br /> <input
-				type="checkbox" onChange="checkbox()"/> check<br /> <input onChange="radio1()" type="radio" name="gender"
-				value="male"/> 1 <br /> <input onChange="radio2()" type="radio" name="gender"
-				value="female"/> 2 <br /> <input onChange="radio3()" type="radio"
-				name="gender" value="other"/> 3<br />
 		    <label class="btn btn-primary" id="file">
 				Wybierz plik<input type="file" name="file" onchange="handleFiles(this.files)" style="display: none"/>
 			</label>
 			<span id="fileDescription" style="display: none">Siema</span><br/>
 			<br/>
-					
+			<button type="submit" class="btn btn-primary" id="btnSave" style="display: none">Zapisz plik</button>			
 		</form>
 	
 		<hr />
